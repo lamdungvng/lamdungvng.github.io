@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20/11</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #fcefe8;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer; /* Con trỏ biến thành bàn tay để báo hiệu có thể click */
+            user-select: none; /* Ngăn việc bôi đen văn bản khi click nhiều lần */
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            pointer-events: none; /* Để click xuyên qua container vào body */
+        }
+
+        /* --- Các bước hiển thị --- */
+        .step {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        /* --- Trang trí --- */
+        /* Phong bì */
+        .envelope {
+            font-size: 100px;
+            animation: shake 2.5s infinite;
+            margin-bottom: 20px;
+        }
+        
+        /* Giấy viết thư */
+        .letter-paper {
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-image: linear-gradient(#999 1px, transparent 1px);
+            background-size: 100% 1.5em;
+            line-height: 1.5em;
+            text-align: left;
+            border: 1px solid #ddd;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6em;
+            color: #444;
+            transform: rotate(-1deg);
+        }
+
+        /* Khung ảnh */
+        .photo-card {
+            background: #fff;
+            padding: 10px 10px 40px 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: inline-block;
+            transform: rotate(2deg);
+            max-width: 90%;
+        }
+        .photo-card img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 2px;
+            pointer-events: none; /* Chặn người dùng kéo thả ảnh */
+        }
+        .photo-caption {
+            margin-top: 15px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            color: #c0392b;
+        }
+
+        /* Dòng hướng dẫn nhỏ ở dưới cùng */
+        .hint-text {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+            animation: pulse 2s infinite;
+            pointer-events: none;
+        }
+
+        /* --- Animation --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Xoay ảnh khác chiều nhau cho tự nhiên */
+        #step4 .photo-card { transform: rotate(-2deg); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div id="step1" class="step active">
+            <div class="envelope">💌</div>
+            <h2 style="color: #e74c3c;">Thư gửi ba mẹ</h2>
+            <p>(Chạm vào màn hình để mở thư)</p>
+        </div>
+
+        <div id="step2" class="step">
+            <div class="letter-paper">
+                <p>Xin chàooooo, </p>
+                <p>Nhân ngày 20/11, con với em xin chúc ba Chường với mẹ Tư có thiệt nhiều niềm vui hehe. Con với em cảm ơn ba mẹ nhiều. Chúc ba mẹ ngày 20/11 vui vẻ.</p>
+                <p>Ở xa toàn xin tiền ba mẹ thui huhu, khi mô đi làm kiếm tiền cho ba mẹ đợ vất vả tí :(( </p>
+                <p>Khoai bựa chừ ở nhà hứa siêng học hơn để ba mẹ vui hehe, hứa với mẹ rửa chén 1 tháng luôn hì hì.</p>
+                <p>Két Khoai</p>
+            </div>
+        </div>
+
+        <div id="step3" class="step">
+            <div class="photo-card">
+                <img src="anh1.jpg" alt="Ảnh 1">
+                <div class="photo-caption">"Cả năm ngày mô cũng vui đẹp như ri"</div>
+            </div>
+        </div>
+
+        <div id="step4" class="step">
+            <div class="photo-card">
+                <img src="anh2.jpg" alt="Ảnh 2">
+                <div class="photo-caption">"Oách xà lách luôn!!!!."</div>
+            </div>
+        </div>
+
+        <div id="step5" class="step">
+            <div class="photo-card">
+                <img src="anh3.jpg" alt="Ảnh 3">
+                <div class="photo-caption">"Quá dữ quá dữ"</div>
+            </div>
+        </div>
+
+        <div id="step6" class="step">
+            <div class="photo-card">
+                <img src="anh4.jpg" alt="Ảnh 3">
+                <div class="photo-caption">"Nhà miềng đẹp thiệt"</div>
+            </div>
+        </div>
+
+        <div id="step7" class="step">
+            <h1 style="color: #e74c3c; font-size: 3em;">Happy<br>Teachers' Day!</h1>
+            <p>❤️ 20 - 11 ❤️</p>
+            <p style="font-size: 0.8em; color: #777; margin-top: 30px;">(Chạm để xem lại từ đầu)</p>
+        </div>
+
+    </div>
+
+    <div class="hint-text">▼ Chạm bất kỳ đâu để tiếp tục ▼</div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 7; // Tổng số bước (Thư + Nội dung + 3 Ảnh + Kết)
+
+        // Bắt sự kiện click vào toàn bộ màn hình (document)
+        document.addEventListener('click', function() {
+            
+            // Ẩn bước hiện tại
+            document.getElementById('step' + currentStep).classList.remove('active');
+            
+            // Tăng bước lên 1
+            currentStep++;
+
+            // Nếu hết bước thì quay lại bước 1
+            if (currentStep > totalSteps) {
+                currentStep = 1;
+            }
+
+            // Hiện bước tiếp theo
+            document.getElementById('step' + currentStep).classList.add('active');
+        });
+    </script>
+
+</body>
+</html>
